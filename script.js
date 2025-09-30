@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Gemini API Configuration ---
     const MODEL_NAME = 'gemini-2.5-flash-preview-05-20';
-    const apiKey = "AIzaSyDitpw8Rlt1n_SApbq48HXAyXwOJPVSFAk";
+    const apiKey = "";
     const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL_NAME}:generateContent?key=${apiKey}`;
 
     // --- 1. Define the Structured JSON Schema (Core requirement for the project) ---
@@ -177,4 +177,5 @@ if (userId.length() < 5) {
 }
 }
     `;
+
 });
