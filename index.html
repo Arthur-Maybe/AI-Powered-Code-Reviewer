@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Reviewer</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#059669', // Emerald Green
+                        'dark-bg': '#0f172a', // Slate 900
+                        'card-bg': '#1e293b', // Slate 800
+                        'code-bg': '#0f172a', 
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Menlo', 'Monaco', 'Consolas', 'monospace'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-dark-bg text-gray-100 p-6 md:p-10">
+
+    <div class="max-w-6xl mx-auto">
+        <header class="mb-8 border-b border-primary/50 pb-4">
+            <h1 class="text-3xl font-extrabold text-primary flex items-center">
+                <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                Automated Code Quality Analyzer
+            </h1>
+            <p class="text-gray-400 mt-1">Leveraging Generative AI for structured, objective code review and technical feedback.</p>
+        </header>
+
+        <form id="review-form" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Input Panel -->
+            <div class="md:col-span-2 bg-card-bg p-6 rounded-xl shadow-2xl border border-gray-700">
+                <h2 class="text-xl font-semibold mb-3 text-white">Paste Code Here</h2>
+                
+                <div class="mb-4">
+                    <label for="language-select" class="block text-sm font-medium text-gray-300 mb-1">Code Language</label>
+                    <select id="language-select" class="w-full p-2 rounded-lg bg-code-bg border border-gray-600 focus:ring-primary focus:border-primary text-gray-50">
+                        <option value="Java">Java</option>
+                        <option value="C">C</option>
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="Python">Python</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <textarea
+                    id="code-input"
+                    rows="15"
+                    class="w-full p-4 font-mono text-sm rounded-lg bg-code-bg border border-gray-600 focus:ring-primary focus:border-primary text-green-300 resize-none placeholder-gray-500"
+                    placeholder="// Paste your code snippet here (e.g., a C function or Java class)"
+                    required
+                ></textarea>
+                
+                <button
+                    type="submit"
+                    id="submit-button"
+                    class="mt-4 w-full bg-primary text-white font-bold py-3 rounded-xl hover:bg-green-600 transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-md shadow-primary/30"
+                >
+                    Run AI Review
+                </button>
+            </div>
+
+            <!-- Output Panel -->
+            <div class="md:col-span-1 bg-card-bg p-6 rounded-xl shadow-2xl border border-gray-700 flex flex-col">
+                <h2 class="text-xl font-semibold mb-3 text-white">2. Analysis Results</h2>
+                <div id="review-output" class="flex-grow space-y-4 overflow-y-auto max-h-[600px] text-sm">
+                    <!-- Results will be displayed here -->
+                    <div class="bg-gray-700/50 p-4 rounded-lg text-gray-400">
+                        <p>Results will appear here after the review is run. The AI will provide a structured report covering Bugs, Security, Refactoring, and Readability.</p>
+                    </div>
+                </div>
+                
+                <!-- Loading Indicator -->
+                <div id="loading-indicator" class="hidden mt-4 bg-primary/20 p-3 rounded-lg flex items-center justify-center text-primary font-semibold">
+                    <div class="flex items-center space-x-2">
+                        <span>Analyzing Code</span>
+                        <div class="loading-dot w-2 h-2 bg-primary rounded-full"></div>
+                        <div class="loading-dot w-2 h-2 bg-primary rounded-full"></div>
+                        <div class="loading-dot w-2 h-2 bg-primary rounded-full"></div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
