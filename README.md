@@ -33,23 +33,23 @@ Core Concept: API Structured Output (JSON Schema Enforcement)
 To run this application outside of the development environment, you need your own Gemini API key.
 
 1. Get Your API Key
-Navigate to Google AI Studio and generate a new API Key.
+  Navigate to Google AI Studio and generate a new API Key.
 
-Copy the key securely.
+  Copy the key securely.
 
 2. Configure the Application
-Open the ai_code_reviewer.html file.
+  Open the ai_code_reviewer.html file.
 
-Locate the following line in the <script> block (around line 180):
+  Locate the following line in the <script> block (around line 180):
 
-const apiKey = "YOUR_API_KEY_HERE"; 
+  const apiKey = "YOUR_API_KEY_HERE"; 
 
-Replace "YOUR_API_KEY_HERE" with the key you copied in Step 1.
+  Replace "YOUR_API_KEY_HERE" with the key you copied in Step 1.
 
 3. Run Locally
-Save the file.
+  Save the file.
 
-Open ai_code_reviewer.html in your web browser.
+  Open ai_code_reviewer.html in your web browser.
 
 💻 Usage
 Select the Code Language (e.g., Java or C).
