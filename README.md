@@ -40,16 +40,16 @@ To run this application outside of the development environment, you need your ow
 2. Configure the Application
   Open the ai_code_reviewer.html file.
 
-  Locate the following line in the <script> block (around line 180):
+  Locate the following line in the <script> block:
 
-  const apiKey = "YOUR_API_KEY_HERE"; 
+  const apiKey = ""; 
 
-  Replace "YOUR_API_KEY_HERE" with the key you copied in Step 1.
+  Add the API key you copied in Step 1.
 
 3. Run Locally
   Save the file.
 
-  Open ai_code_reviewer.html in your web browser.
+  Open index.html in your web browser.
 
 💻 Usage
 Select the Code Language (e.g., Java or C).
